@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+body
+{
+	margin:0 auto;
+}
+a
+{
+    text-decoration:none;
+    color:white;
+}
+a:hover
+{
+    text-decoration:underline;
+     color:green;
+}
+.top
+{
+	height:200px;
+	width:100%;
+	
+}
+.title
+{
+	margin:0px 38%;
+	height:250px;
+	width:40%;
+	
+}
+.bottom
+{
+	color:white;
+	width:100%;
+	background-color:#202020;
+}
+.register
+{
+	width:35%;
+	margin-left:37.5%;
+}

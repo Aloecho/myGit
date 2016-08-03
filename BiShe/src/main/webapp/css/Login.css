@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+body
+{
+	margin:0 auto;
+}
+
+a
+{
+    text-decoration:none;
+    color:white;
+}
+a:hover
+{
+    text-decoration:underline;
+     color:green;
+}
+
+
+.top
+{
+	height:200px;
+	width:100%;
+	
+}
+.title
+{
+	margin:0px 38%;
+	height:200px;
+	width:50%;
+}
+
+.center
+{
+	height:400px;
+	width:100%;
+	background-color:#202020;
+}
+
+.login
+{
+	margin:0 auto;
+	height:380px;
+	width:25%;
+	color:white;
+	font-size:23px;
+	
+}
+
+

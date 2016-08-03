@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nenu.dao.TagMapper" >
+  <resultMap id="BaseResultMap" type="com.nenu.pojo.Tag" >
+    <id column="tagid" property="tagid" jdbcType="INTEGER" />
+    <result column="tagname" property="tagname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    tagid, tagname
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tag
+    where tagid = #{tagid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tag
+    where tagid = #{tagid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.nenu.pojo.Tag" >
+    insert into tag (tagid, tagname)
+    values (#{tagid,jdbcType=INTEGER}, #{tagname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.nenu.pojo.Tag" >
+    insert into tag
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tagid != null" >
+        tagid,
+      </if>
+      <if test="tagname != null" >
+        tagname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tagid != null" >
+        #{tagid,jdbcType=INTEGER},
+      </if>
+      <if test="tagname != null" >
+        #{tagname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.nenu.pojo.Tag" >
+    update tag
+    <set >
+      <if test="tagname != null" >
+        tagname = #{tagname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where tagid = #{tagid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.nenu.pojo.Tag" >
+    update tag
+    set tagname = #{tagname,jdbcType=VARCHAR}
+    where tagid = #{tagid,jdbcType=INTEGER}
+  </update>
+</mapper>
